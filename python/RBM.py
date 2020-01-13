@@ -47,7 +47,7 @@ class RBM(object):
 
         chain_start = ph_sample
 
-        for step in xrange(k):
+        for step in range(k):
             if step == 0:
                 nv_means, nv_samples,\
                 nh_means, nh_samples = self.gibbs_hvh(chain_start)
@@ -139,7 +139,7 @@ def test_rbm(learning_rate=0.1, k=1, training_epochs=1000):
     rbm = RBM(input=data, n_visible=6, n_hidden=2, rng=rng)
 
     # train
-    for epoch in xrange(training_epochs):
+    for epoch in range(training_epochs):
         rbm.contrastive_divergence(lr=learning_rate, k=k)
         # cost = rbm.get_reconstruction_cross_entropy()
         # print >> sys.stderr, 'Training epoch %d, cost is ' % epoch, cost
@@ -149,7 +149,7 @@ def test_rbm(learning_rate=0.1, k=1, training_epochs=1000):
     v = numpy.array([[1, 1, 0, 0, 0, 0],
                      [0, 0, 0, 1, 1, 0]])
 
-    print rbm.reconstruct(v)
+    print (rbm.reconstruct(v))
 
 
 

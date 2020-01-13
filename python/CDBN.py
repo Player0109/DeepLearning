@@ -30,7 +30,7 @@ class CDBN(DBN):
 
 
         # construct multi-layer
-        for i in xrange(self.n_layers):
+        for i in range(self.n_layers):
             # layer_size
             if i == 0:
                 input_size = n_ins
@@ -115,7 +115,7 @@ def test_cdbn(pretrain_lr=0.1, pretraining_epochs=1000, k=1, \
                      [0.5, 0.5, 0.5, 0.5, 0.5, 0.]])
 
     
-    print dbn.predict(x)
+    print (dbn.predict(x))
 
 
 

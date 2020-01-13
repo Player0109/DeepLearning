@@ -71,8 +71,8 @@ def test_lr(learning_rate=0.1, n_epochs=500):
     N = 10
     x1 = rng.randn(N, d) + numpy.array([0, 0])
     x2 = rng.randn(N, d) + numpy.array([20, 10])
-    y1 = [[1, 0] for i in xrange(N)]
-    y2 = [[0, 1] for i in xrange(N)]
+    y1 = [[1, 0] for i in range(N)]
+    y2 = [[0, 1] for i in range(N)]
 
     x = numpy.r_[x1.astype(int), x2.astype(int)]
     y = numpy.r_[y1, y2]
@@ -82,7 +82,7 @@ def test_lr(learning_rate=0.1, n_epochs=500):
     classifier = LogisticRegression(input=x, label=y, n_in=d, n_out=2)
 
     # train
-    for epoch in xrange(n_epochs):
+    for epoch in range(n_epochs):
         classifier.train(lr=learning_rate)
         # cost = classifier.negative_log_likelihood()
         # print >> sys.stderr, 'Training epoch %d, cost is ' % epoch, cost
@@ -91,11 +91,11 @@ def test_lr(learning_rate=0.1, n_epochs=500):
 
     # test
     result = classifier.predict(x)
-    for i in xrange(N):
-        print result[i]
-    print
-    for i in xrange(N):
-        print result[N+i]
+    for i in range(N):
+        print (result[i])
+    print()
+    for i in range(N):
+        print (result[N+i])
 
 
 

@@ -55,7 +55,7 @@ def test_crbm(learning_rate=0.1, k=1, training_epochs=1000):
     v = numpy.array([[0.5, 0.5, 0., 0., 0., 0.],
                      [0., 0., 0., 0.5, 0.5, 0.]])
 
-    print rbm.reconstruct(v)
+    print (rbm.reconstruct(v))
 
 
 if __name__ == "__main__":
